@@ -1,0 +1,33 @@
+{
+  "name": "githubRepoFinder",
+  "version": "0.0.1",
+  "private": true,
+  "scripts": {
+    "start": "node node_modules/react-native/local-cli/cli.js start",
+    "clean": "rm -rf $TMPDIR/react-* && watchman watch-del-all && npm cache clean --force",
+    "clean:android": "cd android/ && ./gradlew clean && cd .. && react-native run-android",
+    "fresh-install": "rm -rf $TMPDIR/react-* && watchman watch-del-all && rm -rf ios/build/ModuleCache/* && rm -rf node_modules/ && npm cache clean && npm install",
+    "link": "react-native link",
+    "run:android": "react-native run-android",
+    "run:ios": "react-native run-ios",
+    "run:both": "react-native run-android; react-native run-ios",
+    "test": "jest --coverage",
+    "test:watch": "npm run test -- --watch",
+    "updateSnapshot": "jest --updateSnapshot",
+    "emulator:android": "cd ~/library/android/sdk/tools && ./emulator -avd Nexus_5X_API_27"
+  },
+  "dependencies": {
+    "native-base": "^2.3.7",
+    "react": "16.2.0",
+    "react-native": "0.52.0"
+  },
+  "devDependencies": {
+    "babel-jest": "22.1.0",
+    "babel-preset-react-native": "4.0.0",
+    "jest": "22.1.4",
+    "react-test-renderer": "16.2.0"
+  },
+  "jest": {
+    "preset": "react-native"
+  }
+}
